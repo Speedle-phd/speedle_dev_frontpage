@@ -13,7 +13,11 @@ import Brand from './Brand'
 // import { buttonVariants } from './ui/button'
 // import { cn } from '@/lib/utils'
 
-const Navbar = () => {
+type NavbarType = {
+   className?: string
+}
+
+const Navbar = ({className} : NavbarType) => {
 	//get window size for responsive design
    const windowSize = useResize()
    //all the Pages for the links in the navbar as constant
@@ -38,12 +42,17 @@ const Navbar = () => {
 
 	if (windowSize.width < 500) {
 		return (
-			<nav className="fixed mt-0 flex w-[100vw] justify-end py-3 opacity-40 transition-opacity hover:opacity-100 shadow-primary shadow-lg">
+			<nav
+				className={cn(
+					className,
+					'fixed mt-0 flex w-[100vw] justify-end py-3 opacity-40 shadow-lg shadow-primary transition-opacity hover:opacity-100',
+				)}
+			>
 				<NavigationMenu>
 					<NavigationMenuList>
 						<NavigationMenuItem>
 							<NavigationMenuTrigger className="py-6">
-                        <Brand />
+								<Brand />
 								<NavigationMenuContent className="w-[500px] p-5">
 									<ul className="flex flex-col gap-4">
 										{PAGES.map((page, i) => {
@@ -68,9 +77,13 @@ const Navbar = () => {
 	}
 
 	return (
-		<nav className="fixed mt-0 flex w-[100vw] justify-between items-center py-3 px-3 opacity-40 transition-opacity hover:opacity-100 shadow-primary shadow-lg">
-         <Brand />
-			<ul className="flex gap-4 ml-2">
+		<nav
+			className={cn(className,
+				'fixed mt-0 flex w-[100vw] items-center justify-between py-3 opacity-40 shadow-lg shadow-primary transition-opacity hover:opacity-100',
+			)}
+		>
+			<Brand />
+			<ul className="mx-2 flex gap-4">
 				{PAGES.map((page, i) => {
 					const { name, url } = page
 					return <LinkElement key={i} name={name} url={url} />

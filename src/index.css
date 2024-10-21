@@ -63,9 +63,41 @@
 @layer base {
   * {
     @apply border-border;
+    @apply transition-colors;
   }
   body {
     @apply bg-background text-foreground;
   }
 }
 
+@layer components {
+   .LoadingBars {
+      scale: 0;
+      transform-origin: center;
+      animation: expand 2s infinite ease-in-out;
+      grid-area: 1/1;
+   }
+   .Switch#dark-mode-switch{
+      background-color: #222;
+      &[aria-checked="true"] {
+         background-color: whitesmoke;
+      }
+   }
+
+}
+
+@layer utilities {
+   .text-shadow-primary {
+      text-shadow: 0 0 0.8rem hsl(var(--primary));
+   }
+}
+/* for loading rings */
+@keyframes expand {
+   from {
+      scale: 0;
+      opacity: 1;
+   } to {
+      scale: 1;
+      opacity: 0;
+   }
+}
