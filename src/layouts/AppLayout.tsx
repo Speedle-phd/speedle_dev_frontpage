@@ -7,7 +7,7 @@ type AppLayoutProps = {} & React.PropsWithChildren
 const AppLayout = ({ children }: AppLayoutProps) => {
 	return (
 		<div className="grid min-h-[100dvh] overflow-x-clip">
-			<Navbar className="px-5" />
+			<Navbar className="px-5 h-20" />
 			<main className="mx-auto mt-24 w-[min(calc(100vw-7rem),70rem)]">
 				{children}
 				<Outlet />

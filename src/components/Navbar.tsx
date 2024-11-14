@@ -42,44 +42,46 @@ const Navbar = ({className} : NavbarType) => {
 
 	if (windowSize.width < 500) {
 		return (
-			<nav
-				className={cn(
-					className,
-					'fixed mt-0 flex w-[100vw] justify-end py-3 opacity-40 shadow-lg shadow-primary transition-opacity hover:opacity-100',
-				)}
-			>
-				<NavigationMenu>
-					<NavigationMenuList>
-						<NavigationMenuItem>
-							<NavigationMenuTrigger className="py-6">
-								<Brand />
-								<NavigationMenuContent className="w-[500px] p-5">
-									<ul className="flex flex-col gap-4">
-										{PAGES.map((page, i) => {
-											const { name, url } = page
-											return (
-												<LinkElement
-													key={i}
-													name={name}
-													url={url}
-													className=""
-												/>
-											)
-										})}
-									</ul>
-								</NavigationMenuContent>
-							</NavigationMenuTrigger>
-						</NavigationMenuItem>
-					</NavigationMenuList>
-				</NavigationMenu>
-			</nav>
+			<>
+				<nav
+					className={cn(
+						className,
+						'sticky top-0 flex w-[100vw] justify-end py-3 opacity-40 shadow-lg shadow-primary transition-opacity hover:opacity-100 z-[1000] mt-[-4rem]',
+					)}
+				>
+					<NavigationMenu>
+						<NavigationMenuList>
+							<NavigationMenuItem>
+								<NavigationMenuTrigger className="py-6">
+									<Brand />
+									<NavigationMenuContent className="w-[400px] p-5">
+										<ul className="flex flex-col gap-4">
+											{PAGES.map((page, i) => {
+												const { name, url } = page
+												return (
+													<LinkElement
+														key={i}
+														name={name}
+														url={url}
+														className=""
+													/>
+												)
+											})}
+										</ul>
+									</NavigationMenuContent>
+								</NavigationMenuTrigger>
+							</NavigationMenuItem>
+						</NavigationMenuList>
+					</NavigationMenu>
+				</nav>
+			</>
 		)
 	}
 
 	return (
 		<nav
 			className={cn(className,
-				'fixed mt-0 flex w-[100vw] items-center justify-between py-3 opacity-40 shadow-lg shadow-primary transition-opacity hover:opacity-100',
+				'fixed mt-0 flex w-[100vw] items-center justify-between py-3 shadow-lg shadow-primary',
 			)}
 		>
 			<Brand />

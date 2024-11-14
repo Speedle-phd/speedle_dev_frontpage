@@ -8,8 +8,9 @@ import AppLayout from './layouts/AppLayout.tsx'
 import About from './pages/About.tsx'
 import Projects from './pages/Projects.tsx'
 import Contact from './pages/Contact.tsx'
-
-
+import { CookiesProvider } from 'react-cookie'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const router = createBrowserRouter([
    {
@@ -42,9 +43,12 @@ const router = createBrowserRouter([
 ])
 
 createRoot(document.getElementById('root')!).render(
-   <StrictMode>
-      <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
-         <RouterProvider router={router} />
-      </ThemeProvider>
-   </StrictMode>
+	<StrictMode>
+		<CookiesProvider defaultSetOptions={{ path: '/' }}>
+			<ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+            <ToastContainer />
+				<RouterProvider router={router} />
+			</ThemeProvider>
+		</CookiesProvider>
+	</StrictMode>,
 )

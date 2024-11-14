@@ -11,6 +11,7 @@ import 'prismjs/themes/prism.css'; //Example style, you can use another
 import { useCallback, useState } from "react";
 import { sleep } from "./lib/utils";
 import { useEffectOnce } from "./hooks/useEffectOnce";
+import Techstack from "./components/Techstack";
 
 
 const initialCode = `
@@ -41,7 +42,6 @@ function App() {
 
    const typeCode = useCallback(async () => {
       if (mount) return
-
 		for (let i = 0; i < initialCode.length; ++i) {
 			await sleep(~~(Math.random() * 10))
 			setCode((prev) => prev + initialCode[i])
@@ -55,25 +55,27 @@ function App() {
 
 
    return (
-		<Centering className="mt-20 flex-col">
-			<h1 className="text-center">
-				<DomainTitle />
-				<Underline className="my-2" />
+		<>
+			<Centering className="mt-20 flex-col">
+				<h1 className="text-center">
+					<DomainTitle />
+					<Underline className="my-2" />
+				</h1>
 				<Editor
-               className="mt-6 bg-secondary text-primary rounded-lg"
+					className="mt-6 rounded-lg bg-secondary text-primary"
 					value={code}
 					onValueChange={(code) => mount && setCode(code)}
 					highlight={(code) => highlight(code, languages.js)}
 					padding={10}
-               disabled={!mount}
+					disabled={!mount}
 					style={{
 						fontFamily: '"Fira code", "Fira Mono", monospace',
 						fontSize: 12,
-                  
 					}}
-				/>
-			</h1>
-		</Centering>
+               />
+               {mount && <Techstack className="mt-6" />}
+			</Centering>
+		</>
    )
 }
 

@@ -9,7 +9,7 @@ const Brand = () => {
 				<AvatarImage className="object-cover" src={logo} alt="logo" />
 				<AvatarFallback>SD</AvatarFallback>
 			</Avatar>
-			<h1 className="ml-1 text-lg font-bold">Speedle.dev</h1>
+			<h1 className="ml-1 text-xl font-bold font-mono">Speedle.dev</h1>
 		</header>
 	)
 }
