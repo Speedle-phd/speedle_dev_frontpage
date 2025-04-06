@@ -122,6 +122,7 @@
 		text-shadow: 0 0 0.8rem hsl(var(--primary));
 	}
 	.auto-grid {
+      --_min-column-size: 300px;
 		display: grid;
 		gap: clamp(1rem, 5vmax, 1.625rem);
 		grid-template-columns: repeat(

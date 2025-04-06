@@ -42,11 +42,11 @@ const Navbar = ({className} : NavbarType) => {
 
 	if (windowSize.width < 500) {
 		return (
-			<>
+
 				<nav
 					className={cn(
 						className,
-						'sticky top-0 flex w-[100vw] justify-end py-3 opacity-40 shadow-lg shadow-primary transition-opacity hover:opacity-100 z-[1000] mt-[-4rem]',
+						'sticky top-0 flex w-[100vw] justify-end py-3 opacity-40 shadow-lg shadow-primary transition-opacity hover:opacity-100 z-[100000] mt-[-4rem]',
 					)}
 				>
 					<NavigationMenu>
@@ -74,14 +74,15 @@ const Navbar = ({className} : NavbarType) => {
 						</NavigationMenuList>
 					</NavigationMenu>
 				</nav>
-			</>
+
 		)
 	}
 
 	return (
 		<nav
-			className={cn(className,
-				'fixed mt-0 flex w-[100vw] items-center justify-between py-3 shadow-lg shadow-primary',
+			className={cn(
+				className,
+				'opacity-40 hover:opacity-100 sticky top-0 z-[100000] mt-0 flex w-[100vw] items-center justify-between py-3 shadow-lg shadow-primary',
 			)}
 		>
 			<Brand />
