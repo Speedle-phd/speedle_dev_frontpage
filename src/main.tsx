@@ -11,6 +11,7 @@ import Contact from './pages/Contact.tsx'
 import { CookiesProvider } from 'react-cookie'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import NotFound from './pages/NotFound.tsx'
 
 const router = createBrowserRouter([
    {
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
    },
    {
       path: '*',
-      element: <h1>Not Found</h1>,
+      element: <NotFound />,
    },
 ])
 

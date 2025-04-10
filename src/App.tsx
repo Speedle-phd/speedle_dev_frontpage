@@ -61,7 +61,7 @@ function App() {
 					<DomainTitle />
 					<Underline className="my-2" />
 				</h1>
-            <h2>Hi, Vanessa, glad you're visiting my side... :P</h2>
+            
 
 				<Editor
 					className="mt-6 rounded-lg bg-secondary text-primary"
