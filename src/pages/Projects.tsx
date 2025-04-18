@@ -6,7 +6,7 @@ import shopping from '@/assets/shopping.jpg'
 import cocktail from '@/assets/cocktail.jpg'
 import todo from '@/assets/todo.jpg'
 import ProjectLinks from '@/components/ProjectLinks'
-
+import chessGame from '@/assets/chess.jpg'
 
 export type Project = {
    name: string
@@ -47,6 +47,12 @@ const Projects = () => {
 			link: 'https://radiant-hummingbird-1e0e37.netlify.app/',
 			image: liquiplaner,
 		},
+      {
+         name: 'Chess Game',
+         description: 'Play chess with your friend. Alert: Only 2 players possible simultaneously...',
+         link: 'https://scintillating-llama-2c32b3.netlify.app/',
+         image: chessGame,
+      }
 	]
 
 	return (
