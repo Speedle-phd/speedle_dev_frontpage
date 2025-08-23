@@ -7,6 +7,7 @@ import cocktail from '@/assets/cocktail.jpg'
 import todo from '@/assets/todo.jpg'
 import ProjectLinks from '@/components/ProjectLinks'
 import chessGame from '@/assets/chess.jpg'
+import taskManager from '@/assets/taskmanager.jpg'
 
 export type Project = {
    name: string
@@ -52,7 +53,13 @@ const Projects = () => {
          description: 'Play chess with your friend. Alert: Only 2 players possible simultaneously...',
          link: 'https://scintillating-llama-2c32b3.netlify.app/',
          image: chessGame,
-      }
+      },
+      {
+         name: 'Task Manager',
+         description: 'Manage your tasks efficiently and create teams that collaborate seamlessly. Self hosted with nginx and docker.',
+         link: 'https://taskmanager.speedle.dev',
+         image: taskManager,
+      },
 	]
 
 	return (
