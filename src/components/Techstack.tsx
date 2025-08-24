@@ -6,6 +6,8 @@ import flask from '@/assets/flask.png'
 import mongodb from '@/assets/mongodb.png'
 import nginx from '@/assets/nginx.png'
 import docker from '@/assets/docker.png'
+import python from '@/assets/python.png'
+import postgres from '@/assets/postgres.png'
 import js from '@/assets/js.png'
 import ts from '@/assets/ts.png'
 import git from '@/assets/git.png'
@@ -15,7 +17,7 @@ import { classNameType } from '@/types/types'
 type TechstackType = classNameType
 
 const Techstack = ({ className }: TechstackType) => {
-	const imgArr = [html, css, react, nodejs, js, ts, flask, mongodb, nginx, docker,  git] as const
+	const imgArr = [html, css, react, nodejs, js, ts, python, flask, mongodb, postgres, nginx, docker,  git] as const
 	const style = { '--_min-column-size': '56px' } as React.CSSProperties
 
 	return (

@@ -1,5 +1,5 @@
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
-import logo from '@/assets/smiley_sm.jpg'
+import logo from '@/assets/logo.jpg'
 
 
 const Brand = () => {

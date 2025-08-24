@@ -117,12 +117,24 @@
 }
 
 @layer utilities {
+   .image-clip{
+      clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+   }
 
 	.text-shadow-primary {
 		text-shadow: 0 0 0.8rem hsl(var(--primary));
 	}
 	.auto-grid {
       --_min-column-size: 300px;
+		display: grid;
+		gap: clamp(1rem, 5vmax, 1.625rem);
+		grid-template-columns: repeat(
+			auto-fit,
+			minmax(min(var(--_min-column-size), 100%), 1fr)
+		);
+	}
+	.auto-grid-tech {
+      --_min-column-size: 200px;
 		display: grid;
 		gap: clamp(1rem, 5vmax, 1.625rem);
 		grid-template-columns: repeat(
