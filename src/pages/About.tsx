@@ -1,5 +1,5 @@
 import Centering from '@/layouts/Centering'
-import profilePic from '@/assets/me.jpg'
+import profilePic from '@/assets/024-11d1a89bf8-LTE-8b9c1.jfif'
 import html from '@/assets/html.png'
 import css from '@/assets/css.png'
 import react from '@/assets/react.png'
